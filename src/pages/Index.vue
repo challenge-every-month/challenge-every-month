@@ -1,33 +1,42 @@
 <template>
   <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>Hello, world!</h1>
-   
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+      <h1>今月の目標一覧</h1>
+      <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
+        <h2>
+          <g-link :to="item.node.path">{{ item.node.title }}</g-link>
+        </h2>
+        <h2>
+          {{ item.node.auther }}
+        </h2>
+        <dl>
+          <dt>{{ item.node.date }}</dt><dd>{{ item.node.fields.tags}}</dd>
+        </dl>
+        <p>{{ item.node.fields.description }}</p>
+        <g-link :to="item.node.path" class="continue-link">続きを読む ></g-link>
+      </div>
   </Layout>
 </template>
 
-<script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
+<page-query>
+  query Home ($page: Int) {
+    allBlogPost (page: $page) {
+      edges {
+        node {
+          _id
+          title
+          auther
+          date (format: "YYYY年MM月DD日 HH:mm:ss")
+          fields {
+            description
+            tags
+          }
+          path
+        }
+      }
+    }
   }
-}
-</script>
+</page-query>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
+<script>
+  export default {}
+</script>
