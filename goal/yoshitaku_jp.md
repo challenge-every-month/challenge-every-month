@@ -2,6 +2,8 @@
 title: 3月の目標
 date: 2018-03-01
 auther: yoshitaku_jp
+description: "hogehoge"
+tags: "hoge"
 ---
 
 1. ロードバイクで遠出する
