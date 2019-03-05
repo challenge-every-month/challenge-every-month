@@ -11,7 +11,6 @@ module.exports = {
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
       plugins: [
-        // ...global plugins
       ]
     }
   },
@@ -25,7 +24,6 @@ module.exports = {
         route: '/goal/:year/:month/:day',
         remark: {
           plugins: [
-            // ...local plugins
           ]
         }
       }
