@@ -22,7 +22,6 @@
         node {
           _id
           title
-          auther
           date (format: "YYYY年MM月DD日 HH:mm:ss")
           content
         }
