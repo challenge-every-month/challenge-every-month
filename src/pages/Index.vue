@@ -1,17 +1,13 @@
 <template>
   <Layout>
-      <h1>今月の目標一覧</h1>
+    <h1 class="title">今月の目標一覧</h1>
+    <div class="container">
+
       <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
-        <h2>
-          {{ item.node.title }}
-        </h2>
-        <h2>
-          {{ item.node.auther }}
-        </h2>
-        <dl>
-          <dt>{{ item.node.date }}</dt>
-        </dl>
+        <h2 class="title">{{ item.node.title }}</h2>
+        <p>{{ item.node.date }}</p>
       <div class="content" v-html="item.node.content" />       </div>
+    </div>
   </Layout>
 </template>
 
@@ -22,7 +18,7 @@
         node {
           _id
           title
-          date (format: "YYYY年MM月DD日 HH:mm:ss")
+          date (format: "YYYY年MM月DD日 HH時mm分")
           content
         }
       }
@@ -33,3 +29,23 @@
 <script>
   export default {}
 </script>
+
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.title{
+  text-align: center
+}
+
+.post {
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+</style>

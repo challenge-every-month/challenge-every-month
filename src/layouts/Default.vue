@@ -1,5 +1,7 @@
 <template>
   <div class="layout">
+    <div class="bg" >
+      <div class="bkRGBA">
     <header class="header">
       <strong>
         <g-link to="/">challenge-every-month</g-link>
@@ -9,6 +11,9 @@
       </nav>
     </header>
     <slot/>
+    </div>
+
+    </div>
   </div>
 </template>
 
@@ -26,16 +31,15 @@ body {
   margin:0;
   padding:0;
   line-height: 1.5;
-}
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,4 +50,18 @@ body {
 .nav__link {
   margin-left: 20px;
 }
+
+.bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("/images/cork.jpg");
+}
+
+.bkRGBA{
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+}
+
 </style>
