@@ -11,5 +11,8 @@
     "@gridsome/transformer-remark": "^0.2.1",
     "gridsome": "^0.5.0",
     "vuetify": "^1.5.14"
+  },
+  "devDependencies": {
+    "webpack-node-externals": "^1.7.2"
   }
 }
