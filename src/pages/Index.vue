@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="display-1 text-lg-center" style="margin-top:50px;">今月の目標一覧</h1>
+    <h1 class="display-1 text-lg-center">今月の目標一覧</h1>
     <div class="container">
       <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
         <v-card>

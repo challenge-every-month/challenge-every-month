@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-toolbar>
-      <v-toolbar-title class="black--text">challenge-every-mouth</v-toolbar-title>
+      <v-toolbar-title class="black--text header">challenge-every-mouth</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn>
@@ -15,7 +15,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content style="background-image:url(images/cork.jpg);background-size:cover">
+    <v-content class="content" style="background-image:url(images/cork.jpg);">
       <slot/>
     </v-content>
   </div>
@@ -24,3 +24,13 @@
 <script>
 export default {};
 </script>
+
+<style>
+.header {
+  height: 50px;
+}
+.content {
+  margin-top: 50px;
+  background-size: cover;
+}
+</style>
