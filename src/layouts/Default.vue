@@ -30,7 +30,7 @@ export default {};
   height: 50px;
 }
 .content {
-  margin-top: 50px;
+  /* margin-top: 25px; */
   background-size: cover;
 }
 </style>
