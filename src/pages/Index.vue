@@ -1,12 +1,19 @@
 <template>
   <Layout>
-    <h1 class="title">今月の目標一覧</h1>
+    <h1 class="display-1 text-lg-center">今月の目標一覧</h1>
     <div class="container">
-
       <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
-        <h2 class="title">{{ item.node.title }}</h2>
-        <p>{{ item.node.date }}</p>
-      <div class="content" v-html="item.node.content" />       </div>
+        <v-card>
+        <v-layout align-center style="position: relative;">
+          <div class="pin red elevation-5"></div>
+        </v-layout>
+          <v-card-title class="title text-md-center">{{ item.node.title }}</v-card-title>
+          <v-card-text>
+            <p>{{ item.node.date }}</p>
+            <div class="content" v-html="item.node.content"/>
+          </v-card-text>
+        </v-card>
+      </div>
     </div>
   </Layout>
 </template>
@@ -27,7 +34,7 @@
 </page-query>
 
 <script>
-  export default {}
+export default {};
 </script>
 
 <style>
@@ -38,14 +45,19 @@
   margin: auto;
 }
 
-.title{
-  text-align: center
-}
-
 .post {
   width: 400px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
+}
+
+.pin {
+  border-radius: 40px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 2;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 </style>
