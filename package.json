@@ -10,6 +10,12 @@
     "@gridsome/source-filesystem": "^0.3.0",
     "@gridsome/transformer-remark": "^0.2.1",
     "gridsome": "^0.7.9",
-    "sharp": "^0.23.2"
+    "vuetify": "^1.5.14"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vuetify-loader": "^1.0.5"
   }
 }
