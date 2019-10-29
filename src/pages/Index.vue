@@ -23,7 +23,7 @@
     allBlogPost (page: $page) {
       edges {
         node {
-          _id
+          id
           title
           date (format: "YYYY年MM月DD日 HH時mm分")
           content
