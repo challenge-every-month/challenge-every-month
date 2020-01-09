@@ -1,20 +1,21 @@
 <template>
   <Layout>
-    <h1 class="display-1 text-lg-center">今月の目標一覧</h1>
-    <div class="container">
-      <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
-        <v-card>
-        <v-layout align-center style="position: relative;">
-          <div class="pin red elevation-5"></div>
-        </v-layout>
-          <v-card-title class="title text-md-center">{{ item.node.title }}</v-card-title>
-          <v-card-text>
-            <p>{{ item.node.date }}</p>
-            <div class="content" v-html="item.node.content"/>
-          </v-card-text>
-        </v-card>
-      </div>
-    </div>
+    <v-container fluid grid-list-xl>
+      <v-layout wrap justify-space-around>
+        <v-flex v-for="item in $page.allBlogPost.edges" :key="item.path">
+          <v-card class="ma-2 flexcard" width="400px">
+            <v-layout align-center style="position: relative;">
+              <div class="pin red elevation-5"></div>
+            </v-layout>
+            <v-card-title class="title">{{ item.node.title }}</v-card-title>
+            <v-card-text>
+              <p>{{ item.node.date }}</p>
+              <p v-html="item.node.content"/>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </Layout>
 </template>
 
@@ -25,7 +26,7 @@
         node {
           id
           title
-          date (format: "YYYY年MM月DD日 HH時mm分")
+          date (format: "YYYY年MM月DD日 設定")
           content
         }
       }
@@ -33,24 +34,8 @@
   }
 </page-query>
 
-<script>
-export default {};
-</script>
-
 <style>
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-}
-
-.post {
-  width: 400px;
-  margin: 10px;
-  padding: 10px;
-}
-
+/* 一旦コメントアウト
 .pin {
   border-radius: 40px;
   width: 20px;
@@ -60,4 +45,5 @@ export default {};
   margin-left: 40%;
   margin-right: 40%;
 }
+*/
 </style>
